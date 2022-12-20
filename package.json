@@ -1,0 +1,29 @@
+{
+  "name": "nasamissioncontrol",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "npm install --prefix server",
+    "install-client": "npm install --prefix client",
+    "install": "npm run install-server && npm run install-client",
+    "server": "npm run watch --prefix server",
+    "client": "npm start --prefix client",
+    "watch": "concurrently \"npm run server\" \"npm run client\"",
+    "deploy": "npm run build --prefix client && npm run watch --prefix server",
+    "test": "npm run test --prefix server && npm run test --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jerrysahle27/NasaMissionControl-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jerrysahle27/NasaMissionControl-1/issues"
+  },
+  "homepage": "https://github.com/jerrysahle27/NasaMissionControl-1#readme",
+  "dependencies": {
+    "morgan": "^1.10.0"
+  }
+}
