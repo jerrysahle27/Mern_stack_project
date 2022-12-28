@@ -11,7 +11,8 @@
     "client": "npm start --prefix client",
     "watch": "concurrently \"npm run server\" \"npm run client\"",
     "deploy": "npm run build --prefix client && npm run watch --prefix server",
-    "test": "npm run test --prefix server && npm run test --prefix client"
+    "deploy-cluster": "concurrently \"npm run build --prefix client\" \"npm run cluster --prefix server\"",
+    "test": "npm  test --prefix server && npm  test --prefix client"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   },
   "homepage": "https://github.com/jerrysahle27/NasaMissionControl-1#readme",
   "dependencies": {
+    "axios": "^1.2.1",
     "morgan": "^1.10.0"
   }
 }
